@@ -1,0 +1,12 @@
+.jumbotron {
+border:solid 2px black;
+text-align: center;
+padding: 10px; 
+background-color: brown !important;
+}
+#background{
+    background-color: lavender;
+}
+.footer{
+    text-align: center;   
+}
