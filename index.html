@@ -5,16 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>My Train Schedule</title>
+    <script src="https://www.gstatic.com/firebasejs/6.2.3/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.2.3/firebase-database.js"></script>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
 </head>
 <body id="background">
-<div class="jumbotron">
+<div class='col-9' class='mr-auto'> 
+  <div class="jumbotron">
     <h1>Train Schedule</h1>
-</div>
-<h1>Current Train Schedule</h1>
-<table class="table table-dark">
+  </div>
+  <h1>Current Schedule</h1>
+  <table class="table table-dark" id = 'train-table'>
     <thead>
       <tr>
         <th scope="col">Train Name</th>
@@ -29,71 +33,72 @@
         <th scope="row">Choo Chooo</th>
         <td>Las Vegas</td>
         <td>20 Mins</td>
-        <td>3 Minuets</td>
+        <td>5:00pm</td>
         <td>3 Minuets</td>
       </tr>
       <tr>
         <th scope="row">Thompson</th>
         <td>Boston</td>
         <td>10 Minuets</td>
-        <td>5 minuets</td>
+        <td>6:00pm</td>
         <td>5 minuets</td>
       </tr>
       <tr>
         <th scope="row">My Train</th>
         <td>Philidelphia</td>
         <td>25 minuets</td>
-        <td>7 minuets</td>
+        <td>6:32am</td>
         <td>7 minuets</td>
       </tr>
       <tr>
         <th scope="row">MJ</th>
         <td>St louis</td>
         <td>7 minuets</td>
-        <td>1 minuet</td>
+        <td>2:34pm</td>
         <td>1 minuet</td>
       </tr>
       <tr>
         <th scope="row">The Snake</th>
         <td>California</td>
         <td>17 minuets</td>
-        <td>3 minuets</td>
+        <td>3:15pm</td>
         <td>3 minuets</td>
       </tr>
       <tr>
         <th scope="row">Reptiles</th>
         <td>Florida</td>
         <td>30 Minuets</td>
-        <td>22 minuets</td>
+        <td>9:00am</td>
         <td>22 minuets</td>
       </tr>
     </tbody>
-</table>
-<h2>New Trains</h2>
+    </table>
+    <h2>New Trains</h2>
     <form>
+      <div class="form-group">
+        <label for="formGroupExampleInput">Train Name</label>
+        <input type="text" class="form-control" id="train-name" placeholder="Example input">
+      </div>
+      <div class="form-group">
+        <label for="formGroupExampleInput2">Destination</label>
+        <input type="text" class="form-control" id="train-destination" placeholder="Another input">
+      </div>
+      <form>
         <div class="form-group">
-          <label for="formGroupExampleInput">Train Name</label>
-          <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Example input">
-        </div>
-        <div class="form-group">
-          <label for="formGroupExampleInput2">Destination</label>
-          <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Another input">
-        </div>
-        <form>
-                <div class="form-group">
                   <label for="formGroupExampleInput">First Train Time(hh:mm)</label>
-                  <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Example input">
+                  <input type="text" class="form-control" id="train-time" placeholder="Example input">
                 </div>
                 <div class="form-group">
                   <label for="formGroupExampleInput2">Frequency (Mins)</label>
-                  <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Another input">
+                  <input type="text" class="form-control" id="train-frequency" placeholder="Another input">
                 </div>
               </form>
-      </form>
-      <button type="button" class="btn btn-primary">Submit</button>
-    <script src="javascript.js"></script>
-    <div class='footer'>
-      <footer>Copyright</footer>
-    </div>
-</body>
+            </form>
+            <button type="button" class="btn btn-primary" id='button'>Submit</button>
+            <div class='footer'>
+              <footer>Copyright</footer>
+            </div>
+          </div>
+          <script src="javascript.js"></script>
+  </body>
 </html>
